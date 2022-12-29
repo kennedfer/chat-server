@@ -1,8 +1,8 @@
 import {getMessagesJson,postMessagejson} from './reader.js'
-
+import dotenv from 'dotenv'
 import fastify from 'fastify'
 const app = fastify({});
-
+dotenv.config();
 // Declare a route
 app.get('/', async (request, reply) => {
   reply.send(await getMessagesJson());
@@ -14,7 +14,7 @@ app.put('/', async (request, reply) => {
   
 const start = async () => {
   try {
-    await app.listen({ port: 1122 })
+    await app.listen({ port: process.env.PORT | 3000})
     console.log("runnig");
   } catch (err) {
     app.log.error(err)
