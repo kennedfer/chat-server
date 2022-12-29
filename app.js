@@ -14,7 +14,8 @@ app.put('/', async (request, reply) => {
   
 const start = async () => {
   try {
-    await app.listen({ port: 3000 })
+    await app.listen({ port: 1122 })
+    console.log("runnig");
   } catch (err) {
     app.log.error(err)
     process.exit(1)
