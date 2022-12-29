@@ -8,10 +8,9 @@ app.get('/', async (request, reply) => {
   reply.send(await getMessagesJson());
 })
 
-app.post('/', async (request, reply) => {
-  await postMessagejson()
-  console.log(request.body);
-})
+app.put('/', async (request, reply) => {
+  reply.send(await postMessagejson(request.body));
+});
   
 const start = async () => {
   try {

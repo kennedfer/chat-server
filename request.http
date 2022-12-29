@@ -1,8 +1,12 @@
 ####
-POST http://127.0.0.1:3000/
+PUT http://127.0.0.1:3000/
 content-type: application/json
+X-Master-Key: "$2b$10$HsyvwxdxpxbSeGNBElK9jeti8KAhscS4w34erHfLrK0edDcPda7Re"
 
 {
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "user": "aaasiai",
+    "message": "eiaaa"
 }
+
+###
+GET http://127.0.0.1:3000/
