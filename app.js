@@ -1,22 +1,23 @@
+import {getMessagesJson,postMessagejson} from './reader.js'
 
-
-const fastify = require('fastify')({ logger: true })
+import fastify from 'fastify'
+const app = fastify({});
 
 // Declare a route
-fastify.get('/', async (request, reply) => {
-  reply.send("Ai calica");
+app.get('/', async (request, reply) => {
+  reply.send(await getMessagesJson());
 })
 
-fastify.get('/all', async (request, reply) => {
-    
-    reply.send("Ai calica");
-  })
+app.post('/', async (request, reply) => {
+  await postMessagejson()
+  console.log(request.body);
+})
   
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 })
+    await app.listen({ port: 3000 })
   } catch (err) {
-    fastify.log.error(err)
+    app.log.error(err)
     process.exit(1)
   }
 }

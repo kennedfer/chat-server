@@ -1,6 +1,8 @@
 {
-    "message":{
-        "user":"ai calica",
-        "message": "eiaaaaa"
-    }
+    "messages":[
+        {
+            "user":"ai calica",
+            "message": "eiaaaaa"
+        }
+    ]
 }
