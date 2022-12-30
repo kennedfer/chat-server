@@ -1,4 +1,4 @@
-import {getMessagesJson,postMessagejson} from './reader.js'
+// import {getMessagesJson,postMessagejson} from './reader.js'
 import dotenv from 'dotenv'
 import fastify from 'fastify'
 const app = fastify({});
@@ -6,12 +6,12 @@ dotenv.config();
 // Declare a route
 app.get('/', async (request, reply) => {
   reply.sendStatus(200)
-  reply.send(await getMessagesJson());
+  // reply.send(await getMessagesJson());
 })
 
-app.put('/', async (request, reply) => {
-  reply.send(await postMessagejson(request.body));
-});
+// app.put('/', async (request, reply) => {
+//   reply.send(await postMessagejson(request.body));
+// });
   
 const start = async () => {
   try {
@@ -22,4 +22,5 @@ const start = async () => {
     process.exit(1)
   }
 }
+
 start()
