@@ -5,6 +5,7 @@ const app = fastify({});
 dotenv.config();
 // Declare a route
 app.get('/', async (request, reply) => {
+  reply.sendStatus(200)
   reply.send(await getMessagesJson());
 })
 
